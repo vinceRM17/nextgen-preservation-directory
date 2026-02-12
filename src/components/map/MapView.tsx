@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 import { useMemo, useEffect, useState } from 'react';
-import type { Listing } from '@/types';
 import 'leaflet/dist/leaflet.css';
 
 // Dynamic imports to avoid SSR issues with Leaflet

@@ -1,5 +1,4 @@
 import { pgTable, uuid, varchar, text, timestamp, pgEnum, jsonb, customType, index } from 'drizzle-orm/pg-core';
-import { sql } from 'drizzle-orm';
 
 // DIR-03 Category Taxonomy - 10 approved categories
 export const categoryEnum = pgEnum('category', [

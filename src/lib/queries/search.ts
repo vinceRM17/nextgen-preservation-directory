@@ -1,6 +1,6 @@
 import { db } from '@/lib/db';
-import { listings } from '@/lib/db/schema';
-import { sql, desc, asc, and, or, eq, SQL } from 'drizzle-orm';
+import { listings, categoryEnum } from '@/lib/db/schema';
+import { sql, desc, asc, and, eq, SQL } from 'drizzle-orm';
 
 export interface SearchParams {
   query?: string | null;
@@ -29,7 +29,10 @@ export async function searchListings(params: SearchParams = {}) {
 
   // Add role filter if provided
   if (role && role !== 'all') {
-    conditions.push(eq(listings.role, role));
+    const validRoles = categoryEnum.enumValues;
+    if (validRoles.includes(role as typeof validRoles[number])) {
+      conditions.push(eq(listings.role, role as typeof validRoles[number]));
+    }
   }
 
   // Add location filter if provided (simple text match for Phase 1)

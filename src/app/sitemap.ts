@@ -3,6 +3,8 @@ import { db } from '@/lib/db';
 import { listings } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nextgenpreservationcollab.org';
 
@@ -23,17 +25,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   // Dynamic listing pages
-  const approvedListings = await db
-    .select({ id: listings.id, updatedAt: listings.updatedAt })
-    .from(listings)
-    .where(eq(listings.status, 'approved'));
+  try {
+    const approvedListings = await db
+      .select({ id: listings.id, updatedAt: listings.updatedAt })
+      .from(listings)
+      .where(eq(listings.status, 'approved'));
 
-  const listingPages: MetadataRoute.Sitemap = approvedListings.map((listing) => ({
-    url: `${baseUrl}/listings/${listing.id}`,
-    lastModified: listing.updatedAt || new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
-  }));
+    const listingPages: MetadataRoute.Sitemap = approvedListings.map((listing) => ({
+      url: `${baseUrl}/listings/${listing.id}`,
+      lastModified: listing.updatedAt || new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    }));
 
-  return [...staticPages, ...listingPages];
+    return [...staticPages, ...listingPages];
+  } catch {
+    return staticPages;
+  }
 }

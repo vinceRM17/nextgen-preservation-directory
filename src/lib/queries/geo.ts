@@ -1,6 +1,5 @@
 import { db } from '@/lib/db';
-import { listings } from '@/lib/db/schema';
-import { eq, sql } from 'drizzle-orm';
+import { sql } from 'drizzle-orm';
 
 interface MapListing {
   id: string;
@@ -31,11 +30,11 @@ export async function getAllListingsWithCoordinates(): Promise<MapListing[]> {
       ORDER BY name ASC
     `);
 
-    return (results.rows as any[]).map((row) => ({
+    return (results as Record<string, string>[]).map((row) => ({
       id: row.id,
       name: row.name,
       role: row.role,
-      phone: row.phone,
+      phone: row.phone || null,
       latitude: parseFloat(row.latitude),
       longitude: parseFloat(row.longitude),
     }));
@@ -74,11 +73,11 @@ export async function getListingsInBounds(
       ORDER BY name ASC
     `);
 
-    return (results.rows as any[]).map((row) => ({
+    return (results as Record<string, string>[]).map((row) => ({
       id: row.id,
       name: row.name,
       role: row.role,
-      phone: row.phone,
+      phone: row.phone || null,
       latitude: parseFloat(row.latitude),
       longitude: parseFloat(row.longitude),
     }));
