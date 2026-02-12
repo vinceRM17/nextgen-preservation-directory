@@ -54,11 +54,16 @@ Plans:
   5. Admin can view pending submissions in moderation queue
   6. Admin can approve, reject, or edit submissions with changes immediately reflected
   7. Admin can create and edit listings directly without submission flow
-**Plans**: TBD
+**Plans**: 7 plans in 5 waves
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md — Schema, validation & UI components (submissions table, Zod schemas, shadcn/ui)
+- [ ] 02-02-PLAN.md — Authentication & admin layout (Clerk, middleware, admin shell)
+- [ ] 02-03-PLAN.md — Geocoding & duplicate detection (Mapbox API, pg_trgm similarity)
+- [ ] 02-04-PLAN.md — Public submission form (React Hook Form, server action, geocoding)
+- [ ] 02-05-PLAN.md — Moderation queue (TanStack Table, approve/reject actions)
+- [ ] 02-06-PLAN.md — Admin listing CRUD (create, edit, delete listings)
+- [ ] 02-07-PLAN.md — Integration verification (Human UAT)
 
 ### Phase 3: Content & Polish
 **Goal**: Directory launches with 100+ verified listings and optimized performance
@@ -83,8 +88,8 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Setup & Core Directory | 0/7 | Ready to execute | - |
-| 2. Submissions & Admin | 0/TBD | Not started | - |
+| 2. Submissions & Admin | 0/7 | Ready to execute | - |
 | 3. Content & Polish | 0/TBD | Not started | - |
 
 ---
-*Last updated: 2026-02-12 after Phase 1 planning*
+*Last updated: 2026-02-12 after Phase 2 planning*
