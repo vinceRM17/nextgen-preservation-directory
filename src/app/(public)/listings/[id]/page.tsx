@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getListing } from '@/lib/queries/listings';
 import { ListingDetail } from '@/components/listings/ListingDetail';
+import { generateListingSchema } from '@/lib/metadata/schema';
 import type { Metadata } from 'next';
 
 interface ListingPageProps {
@@ -18,9 +19,22 @@ export async function generateMetadata({ params }: ListingPageProps): Promise<Me
     };
   }
 
+  const description = listing.description || `View ${listing.name}'s profile and portfolio in the NextGen Preservation Directory.`;
+
   return {
     title: `${listing.name} - ${listing.role} | NextGen Preservation Directory`,
-    description: listing.description || `View ${listing.name}'s profile and portfolio in the NextGen Preservation Directory.`,
+    description,
+    openGraph: {
+      title: `${listing.name} - ${listing.role}`,
+      description,
+      type: 'website',
+      ...(listing.imageUrl && { images: [{ url: listing.imageUrl }] }),
+    },
+    twitter: {
+      card: 'summary',
+      title: `${listing.name} - ${listing.role}`,
+      description,
+    },
   };
 }
 
@@ -33,5 +47,15 @@ export default async function ListingPage({ params }: ListingPageProps) {
     notFound();
   }
 
-  return <ListingDetail listing={listing} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateListingSchema(listing)),
+        }}
+      />
+      <ListingDetail listing={listing} />
+    </>
+  );
 }
