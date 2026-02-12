@@ -1,5 +1,5 @@
 import { InferSelectModel } from 'drizzle-orm';
-import { listings } from '@/lib/db/schema';
+import { listings, submissions } from '@/lib/db/schema';
 
 // DIR-03 Category Taxonomy - 10 approved categories
 export type Category =
@@ -37,3 +37,12 @@ export interface SearchParams {
 
 // Listing status type
 export type ListingStatus = 'draft' | 'pending' | 'approved' | 'rejected';
+
+// Submission type inferred from Drizzle schema
+export type Submission = InferSelectModel<typeof submissions>;
+
+// Submission status type (same as ListingStatus)
+export type SubmissionStatus = ListingStatus;
+
+// Admin action types
+export type AdminAction = 'approve' | 'reject' | 'edit';

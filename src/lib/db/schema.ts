@@ -72,3 +72,39 @@ export const listings = pgTable('listings', {
 
 export type Listing = typeof listings.$inferSelect;
 export type NewListing = typeof listings.$inferInsert;
+
+// Submissions table - stores public form submissions before admin approval
+export const submissions = pgTable('submissions', {
+  id: uuid('id').defaultRandom().primaryKey(),
+  // Submitter info
+  name: varchar('name', { length: 255 }).notNull(),
+  organization: varchar('organization', { length: 255 }),
+  email: varchar('email', { length: 255 }).notNull(),
+  phone: varchar('phone', { length: 20 }),
+  // Professional details
+  role: categoryEnum('role').notNull(),
+  specialties: text('specialties').array(),
+  website: varchar('website', { length: 500 }),
+  description: text('description'),
+  // Location
+  address: varchar('address', { length: 500 }).notNull(),
+  formattedAddress: varchar('formatted_address', { length: 500 }),
+  location: geometry('location'),
+  // Moderation
+  status: statusEnum('status').default('pending').notNull(),
+  adminNotes: text('admin_notes'),
+  reviewedAt: timestamp('reviewed_at'),
+  reviewedBy: varchar('reviewed_by', { length: 255 }),
+  // Duplicate detection
+  duplicateOf: uuid('duplicate_of'),
+  similarityScore: varchar('similarity_score', { length: 10 }),
+  // Timestamps
+  submittedAt: timestamp('submitted_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+}, (table) => ({
+  statusIdx: index('submissions_status_idx').on(table.status),
+  submittedAtIdx: index('submissions_submitted_at_idx').on(table.submittedAt),
+}));
+
+export type Submission = typeof submissions.$inferSelect;
+export type NewSubmission = typeof submissions.$inferInsert;
