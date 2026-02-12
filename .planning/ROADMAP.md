@@ -31,12 +31,16 @@ Decimal phases appear between their surrounding integers in numeric order.
   6. User can click map markers to view stakeholder details
   7. Directory works seamlessly on phone, tablet, and desktop
   8. Listing pages appear in Google search results with proper metadata
-**Plans**: TBD
+**Plans**: 7 plans in 4 waves
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
+- [ ] 01-01-PLAN.md — Foundation & data layer (Next.js 15, PostgreSQL, Drizzle ORM)
+- [ ] 01-02-PLAN.md — Design system & layout (Tailwind, shadcn/ui, Header/Footer)
+- [ ] 01-03-PLAN.md — Browse & display (Listing cards, grid, detail pages)
+- [ ] 01-04-PLAN.md — Search & filter system (Full-text search, URL state)
+- [ ] 01-05-PLAN.md — Interactive map (Leaflet, clustering, PostGIS queries)
+- [ ] 01-06-PLAN.md — SEO & accessibility (Schema markup, WCAG compliance)
+- [ ] 01-07-PLAN.md — Integration verification (Human UAT)
 
 ### Phase 2: Submissions & Admin
 **Goal**: Collab staff can approve community-submitted listings through a secure moderation workflow
@@ -78,9 +82,9 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Setup & Core Directory | 0/TBD | Not started | - |
+| 1. Setup & Core Directory | 0/7 | Ready to execute | - |
 | 2. Submissions & Admin | 0/TBD | Not started | - |
 | 3. Content & Polish | 0/TBD | Not started | - |
 
 ---
-*Last updated: 2026-02-12 after roadmap creation*
+*Last updated: 2026-02-12 after Phase 1 planning*
