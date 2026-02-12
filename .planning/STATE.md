@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-02-12)
 Phase: 02 of 3 (Submissions & Admin)
 Plan: 5 of 7 complete
 Status: Executing Phase 02 plans
-Last activity: 2026-02-12 — Completed plan 02-05 (Admin Moderation Queue)
+Last activity: 2026-02-12 — Completed plan 02-04 (Public Submission Form)
 
 Progress: [███████░░░] 71% (5/7 plans)
 
@@ -39,11 +39,12 @@ Progress: [███████░░░] 71% (5/7 plans)
 | 02-01 | 4 min | 3 | 14 |
 | 02-02 | 2 min | 3 | 7 |
 | 02-03 | 2 min | 2 | 4 |
+| 02-04 | 3 min | 2 | 4 |
 | 02-05 | 2 min | 2 | 5 |
 
 **Recent Trend:**
-- Last 6 plans: 01-06 (5min), 02-01 (4min), 02-02 (2min), 02-03 (2min), 02-05 (2min)
-- Trend: Consistent execution, Phase 02 averaging 2.4min vs Phase 01's 4.3min
+- Last 6 plans: 02-01 (4min), 02-02 (2min), 02-03 (2min), 02-04 (3min), 02-05 (2min)
+- Trend: Consistent execution, Phase 02 averaging 2.6min vs Phase 01's 4.3min
 
 *Updated after each plan completion*
 
@@ -112,6 +113,14 @@ Recent decisions affecting current work:
 - Graceful error handling: duplicate detection returns empty array on failure, never blocks submissions
 - Fixed result.rows.map() to result.map() for drizzle-orm/postgres-js driver compatibility
 
+**Plan 02-04 (Public Submission Form):**
+- Used PostGIS ST_MakePoint via drizzle-orm sql template tag for geometry insertion (text cannot be implicitly cast to geometry)
+- useActionState imported from react (React 19) not react-dom for server action integration
+- Dual validation: React Hook Form + Zod for instant client feedback, Zod in server action as source of truth
+- Duplicates flagged but submission still saved (admin makes final call)
+- Native checkbox grid for specialties instead of Form component wrapper for simplicity
+- Sonner toast notifications with dark slate theme styling
+
 **Plan 02-05 (Admin Moderation Queue):**
 - Used TanStack Table v8 with inline column definitions for action handler closures
 - Server Actions for approve/reject instead of API routes (defense in depth with auth check)
@@ -130,10 +139,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-12
-Stopped at: Completed 02-05-PLAN.md (Admin Moderation Queue)
+Stopped at: Completed 02-04-PLAN.md (Public Submission Form)
 Resume file: None
 
 Next step: Execute plan 02-06 (Admin Listings Management)
 
 ---
-*Last updated: 2026-02-12 after completing plan 02-05*
+*Last updated: 2026-02-12 after completing plan 02-04*
