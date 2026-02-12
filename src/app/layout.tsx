@@ -13,8 +13,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Louisville Historic Preservation Directory',
-  description: 'Connect with Louisville\'s historic preservation community',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://nextgenpreservationcollab.org'),
+  title: {
+    default: 'NextGen Preservation Collab Directory - Louisville, KY',
+    template: '%s | NextGen Preservation Collab Directory',
+  },
+  description: 'Find builders, craftspeople, architects, and preservation stakeholders in Louisville\'s historic preservation ecosystem.',
+  keywords: 'Louisville preservation, historic renovation, preservation directory, Kentucky heritage, historic buildings',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'NextGen Preservation Collab Directory',
+    locale: 'en_US',
+  },
 };
 
 export default function RootLayout({

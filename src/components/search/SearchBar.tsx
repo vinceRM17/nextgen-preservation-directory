@@ -53,8 +53,12 @@ export function SearchBar({ defaultValue = '', className }: SearchBarProps) {
       </div>
 
       {/* Input Field */}
+      <label htmlFor="directory-search" className="sr-only">
+        Search the preservation directory
+      </label>
       <Input
-        type="text"
+        id="directory-search"
+        type="search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search by name, specialty, or keyword..."

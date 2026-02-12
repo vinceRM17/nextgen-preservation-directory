@@ -4,9 +4,22 @@ import { ListingGrid } from '@/components/listings/ListingGrid';
 import { SearchBar } from '@/components/search/SearchBar';
 import { FilterPanel } from '@/components/search/FilterPanel';
 
-export const metadata = {
-  title: 'NextGen Preservation Directory - Louisville Historic Preservation',
-  description: 'Connect with Louisville\'s historic preservation community. Find builders, craftspeople, architects, and preservation advocates.',
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'NextGen Preservation Collab Directory - Louisville, KY',
+  description: 'Find builders, craftspeople, architects, and preservation stakeholders in Louisville\'s historic preservation ecosystem.',
+  keywords: 'Louisville preservation, historic renovation, preservation directory, Kentucky heritage, historic buildings',
+  openGraph: {
+    title: 'NextGen Preservation Collab Directory',
+    description: 'Connect with Louisville\'s preservation community. Find builders, craftspeople, and advocates.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'NextGen Preservation Collab Directory',
+    description: 'Connect with Louisville\'s preservation community.',
+  },
 };
 
 interface HomePageProps {
