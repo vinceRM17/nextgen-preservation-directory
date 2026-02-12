@@ -10,25 +10,25 @@ See: .planning/PROJECT.md (updated 2026-02-12)
 ## Current Position
 
 Phase: 02 of 3 (Submissions & Admin)
-Plan: 3 of 7 complete
+Plan: 4 of 7 complete
 Status: Executing Phase 02 plans
-Last activity: 2026-02-12 — Completed plan 02-01 (Database Schema & UI Foundation)
+Last activity: 2026-02-12 — Completed plan 02-03 (Geocoding & Duplicate Detection)
 
-Progress: [████░░░░░░] 43% (3/7 plans)
+Progress: [█████░░░░░] 57% (4/7 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
-- Average duration: 3.8 min
-- Total execution time: 0.57 hours
+- Total plans completed: 10
+- Average duration: 3.6 min
+- Total execution time: 0.60 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-setup-core-directory | 6 | 26 min | 4.3 min |
-| 02-submissions-admin | 3 | 8 min | 2.7 min |
+| 02-submissions-admin | 4 | 10 min | 2.5 min |
 
 **Recent Executions:**
 | Plan | Duration | Tasks | Files |
@@ -38,10 +38,11 @@ Progress: [████░░░░░░] 43% (3/7 plans)
 | 01-06 | 5 min | 3 | 10 |
 | 02-01 | 4 min | 3 | 14 |
 | 02-02 | 2 min | 3 | 7 |
+| 02-03 | 2 min | 2 | 4 |
 
 **Recent Trend:**
-- Last 6 plans: 01-04 (5min), 01-05 (3min), 01-06 (5min), 02-01 (4min), 02-02 (2min)
-- Trend: Consistent execution, Phase 02 averaging 2.7min vs Phase 01's 4.3min
+- Last 6 plans: 01-05 (3min), 01-06 (5min), 02-01 (4min), 02-02 (2min), 02-03 (2min)
+- Trend: Consistent execution, Phase 02 averaging 2.5min vs Phase 01's 4.3min
 
 *Updated after each plan completion*
 
@@ -102,6 +103,14 @@ Recent decisions affecting current work:
 - Call auth() once in layout instead of per-page (Clerk best practice)
 - Added error handling for database queries to handle missing/empty tables during development
 
+**Plan 02-03 (Geocoding & Duplicate Detection):**
+- Used Mapbox v6 geocoding API with proximity bias toward Louisville center
+- Discriminated union return type (success: true/false) for geocoding results
+- Coordinates as {x: lon, y: lat} matching PostGIS POINT(lon lat) convention
+- Default similarity threshold 0.4 (broad for admin review), strict 0.7 (auto-flag)
+- Graceful error handling: duplicate detection returns empty array on failure, never blocks submissions
+- Fixed result.rows.map() to result.map() for drizzle-orm/postgres-js driver compatibility
+
 ### Pending Todos
 
 None yet.
@@ -113,10 +122,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-12
-Stopped at: Completed 02-01-PLAN.md (Database Schema & UI Foundation)
+Stopped at: Completed 02-03-PLAN.md (Geocoding & Duplicate Detection)
 Resume file: None
 
-Next step: Execute plan 02-03 (Public Submission Form)
+Next step: Execute plan 02-04 (Public Submission Form)
 
 ---
-*Last updated: 2026-02-12 after completing plan 02-01*
+*Last updated: 2026-02-12 after completing plan 02-03*
