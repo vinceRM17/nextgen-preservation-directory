@@ -5,43 +5,44 @@
 See: .planning/PROJECT.md (updated 2026-02-12)
 
 **Core value:** People working in Louisville's historic preservation ecosystem can find and connect with each other — because right now, they can't.
-**Current focus:** Phase 1 - Setup & Core Directory
+**Current focus:** Phase 02 - Submissions & Admin
 
 ## Current Position
 
-Phase: 1 of 3 (Setup & Core Directory)
-Plan: 6 of 7 complete
-Status: Executing Phase 1 plans
-Last activity: 2026-02-12 — Completed plan 01-06 (SEO & Accessibility)
+Phase: 02 of 3 (Submissions & Admin)
+Plan: 2 of 7 complete
+Status: Executing Phase 02 plans
+Last activity: 2026-02-12 — Completed plan 02-02 (Admin Auth & Layout)
 
-Progress: [████████░░] 86% (6/7 plans)
+Progress: [██░░░░░░░░] 29% (2/7 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: 4.3 min
-- Total execution time: 0.43 hours
+- Total plans completed: 8
+- Average duration: 3.8 min
+- Total execution time: 0.50 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-setup-core-directory | 6 | 26 min | 4.3 min |
+| 02-submissions-admin | 2 | 4 min | 2.0 min |
 
 **Recent Executions:**
 | Plan | Duration | Tasks | Files |
 |------|----------|-------|-------|
-| 01-01 | 6 min | 3 | 14 |
-| 01-02 | 3 min | 3 | 7 |
 | 01-03 | 4 min | 3 | 8 |
 | 01-04 | 5 min | 3 | 9 |
 | 01-05 | 3 min | 3 | 4 |
 | 01-06 | 5 min | 3 | 10 |
+| 02-01 | 2 min | 2 | 2 |
+| 02-02 | 2 min | 3 | 7 |
 
 **Recent Trend:**
-- Last 6 plans: 01-01 (6min), 01-02 (3min), 01-03 (4min), 01-04 (5min), 01-05 (3min), 01-06 (5min)
-- Trend: Consistent, averaging ~4.3min per plan
+- Last 6 plans: 01-03 (4min), 01-04 (5min), 01-05 (3min), 01-06 (5min), 02-01 (2min), 02-02 (2min)
+- Trend: Phase 02 plans executing faster, averaging 2min vs Phase 01's 4.3min
 
 *Updated after each plan completion*
 
@@ -89,6 +90,16 @@ Recent decisions affecting current work:
 - Centralized ARIA labels in config file for consistency
 - Skip-to-content link with sr-only + focus:not-sr-only pattern
 
+**Plan 02-01 (Submission Validation):**
+- Created Zod schemas for submission validation
+- Added validation for all submission fields
+
+**Plan 02-02 (Admin Auth & Layout):**
+- Used Clerk for admin authentication (edge-compatible, production-ready)
+- Middleware-based route protection (centralized, automatic redirects)
+- Call auth() once in layout instead of per-page (Clerk best practice)
+- Added error handling for database queries to handle missing/empty tables during development
+
 ### Pending Todos
 
 None yet.
@@ -100,10 +111,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-12
-Stopped at: Completed 01-06-PLAN.md (SEO & Accessibility)
+Stopped at: Completed 02-02-PLAN.md (Admin Auth & Layout)
 Resume file: None
 
-Next step: Execute plan 01-07 (Integration Verification Checkpoint)
+Next step: Execute plan 02-03 (Pending Submissions Queue)
 
 ---
-*Last updated: 2026-02-12 after completing plan 01-06*
+*Last updated: 2026-02-12 after completing plan 02-02*
