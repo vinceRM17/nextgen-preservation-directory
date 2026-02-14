@@ -9,7 +9,7 @@ import { Select } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
-import type { ActionState } from '@/app/(admin)/listings/actions'
+import type { ActionState } from '@/app/admin/listings/actions'
 
 const SPECIALTIES = [
   'Historic Renovation', 'Masonry Restoration', 'Woodwork', 'Metalwork',

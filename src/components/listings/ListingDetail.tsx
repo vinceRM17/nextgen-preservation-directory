@@ -12,7 +12,7 @@ export function ListingDetail({ listing }: ListingDetailProps) {
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-4xl font-oswald font-bold mb-2">{listing.name}</h1>
-        <p className="text-xl text-slate-400 font-lato">{listing.role}</p>
+        <p className="text-xl text-slate-300 font-lato">{listing.role}</p>
       </div>
 
       {/* Main Content Grid */}
@@ -23,7 +23,7 @@ export function ListingDetail({ listing }: ListingDetailProps) {
           {listing.description && (
             <section>
               <h2 className="text-2xl font-oswald font-semibold mb-3">About</h2>
-              <p className="text-slate-300 leading-relaxed whitespace-pre-line">
+              <p className="text-slate-200 leading-relaxed whitespace-pre-line">
                 {listing.description}
               </p>
             </section>
@@ -33,7 +33,7 @@ export function ListingDetail({ listing }: ListingDetailProps) {
           {listing.specialties && listing.specialties.length > 0 && (
             <section>
               <h2 className="text-2xl font-oswald font-semibold mb-3">Specialties</h2>
-              <ul className="list-disc list-inside space-y-1 text-slate-300">
+              <ul className="list-disc list-inside space-y-1 text-slate-200">
                 {listing.specialties.map((specialty, index) => (
                   <li key={index}>{specialty}</li>
                 ))}
@@ -63,7 +63,7 @@ export function ListingDetail({ listing }: ListingDetailProps) {
                       <CardTitle className="text-lg">{project.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-400">{project.description}</p>
+                      <p className="text-sm text-slate-300">{project.description}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -81,7 +81,7 @@ export function ListingDetail({ listing }: ListingDetailProps) {
             <CardContent className="space-y-4">
               {listing.phone && (
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-400 mb-1">Phone</h3>
+                  <h3 className="text-sm font-semibold text-slate-300 mb-1">Phone</h3>
                   <a
                     href={`tel:${listing.phone}`}
                     className="text-blue-400 hover:underline"
@@ -92,7 +92,7 @@ export function ListingDetail({ listing }: ListingDetailProps) {
               )}
               {listing.email && (
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-400 mb-1">Email</h3>
+                  <h3 className="text-sm font-semibold text-slate-300 mb-1">Email</h3>
                   <a
                     href={`mailto:${listing.email}`}
                     className="text-blue-400 hover:underline break-all"
@@ -103,7 +103,7 @@ export function ListingDetail({ listing }: ListingDetailProps) {
               )}
               {listing.website && (
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-400 mb-1">Website</h3>
+                  <h3 className="text-sm font-semibold text-slate-300 mb-1">Website</h3>
                   <a
                     href={listing.website}
                     target="_blank"
@@ -116,7 +116,7 @@ export function ListingDetail({ listing }: ListingDetailProps) {
               )}
               {listing.address && (
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-400 mb-1">Address</h3>
+                  <h3 className="text-sm font-semibold text-slate-300 mb-1">Address</h3>
                   <p className="text-slate-300 text-sm">{listing.address}</p>
                 </div>
               )}

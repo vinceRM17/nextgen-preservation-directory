@@ -17,7 +17,7 @@ export default async function MapPage() {
         <h1 className="text-3xl font-oswald font-semibold mb-4">
           Map View
         </h1>
-        <p className="text-slate-600 font-lato mb-4">
+        <p className="text-slate-300 font-lato mb-4">
           Explore Louisville&apos;s preservation stakeholders on the map.
           Click markers for details.
         </p>

@@ -42,7 +42,7 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="font-lato text-sm text-slate-400">
+          <div className="font-lato text-sm text-slate-300">
             <p>&copy; 2026 NextGen Preservation Collab</p>
           </div>
         </div>

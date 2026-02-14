@@ -35,17 +35,17 @@ export function ListingCard({ listing }: ListingCardProps) {
         </CardHeader>
         <CardContent className="space-y-2">
           {displaySpecialties && (
-            <p className="text-sm text-slate-300 line-clamp-2">
+            <p className="text-sm text-slate-200 line-clamp-2">
               <span className="font-semibold">Specialties:</span> {displaySpecialties}
             </p>
           )}
           {listing.phone && (
-            <p className="text-sm text-slate-300">
+            <p className="text-sm text-slate-200">
               <span className="font-semibold">Phone:</span> {listing.phone}
             </p>
           )}
           {listing.email && (
-            <p className="text-sm text-slate-300 truncate">
+            <p className="text-sm text-slate-200 truncate">
               <span className="font-semibold">Email:</span> {listing.email}
             </p>
           )}

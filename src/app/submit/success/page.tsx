@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function SubmitSuccessPage() {
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4">
+    <div className="flex items-center justify-center px-4 py-16">
       <div className="max-w-md text-center">
         <div className="mb-6">
           <svg

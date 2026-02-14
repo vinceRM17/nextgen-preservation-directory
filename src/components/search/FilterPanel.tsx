@@ -71,7 +71,7 @@ export function FilterPanel({
         <div>
           <label
             htmlFor="category-filter"
-            className="block text-sm font-medium text-slate-300 mb-2"
+            className="block text-sm font-medium text-slate-200 mb-2"
           >
             Category
           </label>
@@ -92,7 +92,7 @@ export function FilterPanel({
         <div>
           <label
             htmlFor="location-filter"
-            className="block text-sm font-medium text-slate-300 mb-2"
+            className="block text-sm font-medium text-slate-200 mb-2"
           >
             Location
           </label>
@@ -134,7 +134,7 @@ export function FilterPanel({
       {/* Active Filters Display */}
       {activeFilters.length > 0 && (
         <div className="flex flex-wrap gap-2 items-center">
-          <span className="text-sm text-slate-400">Active filters:</span>
+          <span className="text-sm text-slate-300">Active filters:</span>
           {activeFilters.map((filter) => (
             <div
               key={filter.key}

@@ -11,8 +11,8 @@ export function ListingGrid({ listings }: ListingGridProps) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <h3 className="text-xl font-oswald text-slate-400 mb-2">No listings found</h3>
-          <p className="text-sm text-slate-500">
+          <h3 className="text-xl font-oswald text-slate-300 mb-2">No listings found</h3>
+          <p className="text-sm text-slate-400">
             Check back soon for preservation professionals in your area
           </p>
         </div>

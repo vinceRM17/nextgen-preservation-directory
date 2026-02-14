@@ -10,6 +10,7 @@ export function Header() {
     { href: '/', label: 'Home' },
     { href: '/browse', label: 'Browse' },
     { href: '/map', label: 'Map' },
+    { href: '/submit', label: 'Submit a Listing' },
   ];
 
   return (

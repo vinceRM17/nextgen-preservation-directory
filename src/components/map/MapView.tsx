@@ -60,8 +60,8 @@ export function MapView({ listings = [], className }: MapViewProps) {
 
   if (!isMounted) {
     return (
-      <div className={`bg-slate-100 flex items-center justify-center ${className || 'h-[500px] lg:h-[calc(100vh-200px)]'}`}>
-        <p className="text-slate-500">Loading map...</p>
+      <div className={`bg-slate-800 flex items-center justify-center ${className || 'h-[500px] lg:h-[calc(100vh-200px)]'}`}>
+        <p className="text-slate-400">Loading map...</p>
       </div>
     );
   }

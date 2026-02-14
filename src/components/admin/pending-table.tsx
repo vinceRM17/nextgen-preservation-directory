@@ -12,7 +12,7 @@ import {
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from '@/components/ui/table'
-import { approveSubmission, rejectSubmission } from '@/app/(admin)/pending/actions'
+import { approveSubmission, rejectSubmission } from '@/app/admin/pending/actions'
 import type { PendingSubmission } from './columns-pending'
 
 export function PendingTable({ data }: { data: PendingSubmission[] }) {

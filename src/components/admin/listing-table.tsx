@@ -13,7 +13,7 @@ import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from '@/components/ui/table'
 import Link from 'next/link'
-import { deleteListing } from '@/app/(admin)/listings/actions'
+import { deleteListing } from '@/app/admin/listings/actions'
 
 export type ListingRow = {
   id: string
